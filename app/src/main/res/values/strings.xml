@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MiPi</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <string name="title_drugs">Drugs</string>
+    <string name="title_more">More</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+</resources>
