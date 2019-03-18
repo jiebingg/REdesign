@@ -28,13 +28,14 @@ public class MoreFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_more, container, false);
-        ArrayList<String> notifs = new ArrayList<String>();
-        notifs.add("Upcoming appointments");
-        notifs.add("Settings");
-        notifs.add("Clear history");
-        notifs.add("Contact Support");
+        ArrayList<String> settingsOpts = new ArrayList<String>();
+        settingsOpts.add("Upcoming appointments");
+        settingsOpts.add("Settings");
+        settingsOpts.add("Clear history");
+        settingsOpts.add("Contact Support");
+        settingsOpts.add("Suspend MiPi dispenser");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getContext(),android.R.layout.simple_list_item_1,notifs);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getContext(),android.R.layout.simple_list_item_1,settingsOpts);
 
         ListView list = (ListView) view.findViewById(R.id.morelist);
         list.setAdapter(arrayAdapter);

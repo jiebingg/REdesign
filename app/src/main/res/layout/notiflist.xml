@@ -16,7 +16,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
-        android:text="Notification" />
+        android:text="Panadol @ 3pm" />
+
 
     <Button
         android:id="@+id/notiflist_button1"

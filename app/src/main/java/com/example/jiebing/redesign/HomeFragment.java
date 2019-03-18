@@ -76,7 +76,19 @@ public class HomeFragment extends Fragment {
                     }
                 });
                 viewHolder.button2 = (Button) convertView.findViewById(R.id.notiflist_button2);
+                ViewHolder.button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "Skip button was clicked for notification" + position, Toast.LENGTH_SHORT).show();
+                    }
+                });
                 viewHolder.button3 = (Button) convertView.findViewById(R.id.notiflist_button3);
+                ViewHolder.button3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "Snooze button was clicked for notification" + position, Toast.LENGTH_SHORT).show();
+                    }
+                });
                 convertView.setTag(viewHolder);
             }
 
@@ -94,7 +106,7 @@ public class HomeFragment extends Fragment {
 
         TextView title;
         static Button button1;
-        Button button2;
-        Button button3;
+        static Button button2;
+        static Button button3;
     }
 }
