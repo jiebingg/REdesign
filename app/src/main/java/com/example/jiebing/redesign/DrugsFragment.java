@@ -1,12 +1,14 @@
 package com.example.jiebing.redesign;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -47,7 +49,16 @@ public class DrugsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_drugs, container, false);
+        Button addnew = (Button) rootView.findViewById(R.id.addDrugBtn);
+        addnew.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), AddNewDrug.class);
+                in.putExtra("some", "some data");
+                startActivity(in);
+            }
+        });
         return rootView;
     }
 

@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(layout, parent, false);
                 ViewHolder viewHolder = new ViewHolder();
-                viewHolder.title = (TextView) convertView.findViewById(R.id.notiflist_text);
+
                 viewHolder.button1 = (Button) convertView.findViewById(R.id.notiflist_button1);
                 ViewHolder.button1.setOnClickListener(new View.OnClickListener() {
                     @Override
