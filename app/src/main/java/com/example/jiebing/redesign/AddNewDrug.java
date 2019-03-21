@@ -29,8 +29,8 @@ public class AddNewDrug extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            if (bundle.getString("some") != null){
-                Toast.makeText(getApplicationContext(), "data" + bundle.getString("some"), Toast.LENGTH_SHORT).show();
+            if (bundle.getString("short phrase") != null){
+                Toast.makeText(getApplicationContext(), bundle.getString("short phrase"), Toast.LENGTH_SHORT).show();
             }
 
         }

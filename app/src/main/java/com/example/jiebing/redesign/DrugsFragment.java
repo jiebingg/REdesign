@@ -55,7 +55,7 @@ public class DrugsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(getActivity(), AddNewDrug.class);
-                in.putExtra("some", "some data");
+                in.putExtra("short phrase", "Enter new medicine information");
                 startActivity(in);
             }
         });

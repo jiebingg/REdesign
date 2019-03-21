@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jiebing.redesign.MainActivity" />
         </activity>
+        <activity
+            android:name=".upcomingAppt"
+            android:label="@string/title_activity_upcoming_appt"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jiebing.redesign.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

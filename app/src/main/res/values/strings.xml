@@ -5,6 +5,10 @@
     <string name="title_drugs">Drugs</string>
     <string name="title_more">More</string>
     <string name="title_activity_add_new_drug">AddNewDrug</string>
+    <string name="title_activity_random">random</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_upcoming_appt">upcomingAppt</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

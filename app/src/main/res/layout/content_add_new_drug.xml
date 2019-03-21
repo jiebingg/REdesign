@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:text="Frequency of administration per week"
+        android:text="Frequency of administration per day"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="118dp"
@@ -79,6 +79,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="time" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_marginTop="100dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Done" />
 
 
 </LinearLayout>
