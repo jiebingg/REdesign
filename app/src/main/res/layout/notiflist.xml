@@ -15,8 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:text="Panadol @ 3pm" />
+        android:layout_marginLeft="13dp" />
 
 
     <Button

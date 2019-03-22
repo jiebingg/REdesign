@@ -31,62 +31,68 @@ public class HomeFragment extends Fragment {
     }
 
 
+    ListView list;
+    String [] notifArray = {"Notif1", "Notif2", "Notif3"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         // Inflate the layout for this fragment
-        ArrayList<String> notifs = new ArrayList<String>();
-        notifs.add("Panadol @ 9am");
-        notifs.add("Fedac @ 10am");
-        notifs.add("Pill3 @ 2pm");
-        notifs.add("Pill4 @ 4pm");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String> (getContext(),android.R.layout.simple_list_item_1,notifs);
+        list = (ListView) view.findViewById(R.id.notifs);
+        MyListAdapter adapter = new MyListAdapter(getContext(), notifArray);
 
-        ListView list = (ListView) view.findViewById(R.id.notifs);
-
-        list.setAdapter(new MyListAdapter(getContext(), R.layout.notiflist, notifs));
-
+        list.setAdapter(adapter);
         return view;
     }
 
     private class MyListAdapter extends ArrayAdapter<String> {
-    private int layout;
-        public MyListAdapter(Context context, int resource, List<String> objects) {
-            super(context, resource, objects);
+        Context context;
+        String myTitles[];
 
-            layout = resource;
+
+
+        public MyListAdapter(Context c, String[] titles) {
+            super(c, R.layout.notiflist, R.id.notiflist_text, titles);
+            this.context = c;
+            this.myTitles= titles;
+
+
         }
         
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder mainViewHolder = null;
+
+
             if (convertView == null){
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(layout, parent, false);
+                convertView = inflater.inflate(R.layout.notiflist, parent, false);
                 ViewHolder viewHolder = new ViewHolder();
+
+                TextView title = (TextView) convertView.findViewById(R.id.notiflist_text);
+                title.setText(myTitles[position]);
 
                 viewHolder.button1 = (Button) convertView.findViewById(R.id.notiflist_button1);
                 ViewHolder.button1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(), "Taken button was clicked for notification" + position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Taken button was clicked for notification" + (position +1), Toast.LENGTH_SHORT).show();
                     }
                 });
                 viewHolder.button2 = (Button) convertView.findViewById(R.id.notiflist_button2);
                 ViewHolder.button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(), "Skip button was clicked for notification" + position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Skip button was clicked for notification" + (position +1), Toast.LENGTH_SHORT).show();
                     }
                 });
                 viewHolder.button3 = (Button) convertView.findViewById(R.id.notiflist_button3);
                 ViewHolder.button3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(), "Snooze button was clicked for notification" + position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Snooze button was clicked for notification" + (position + 1), Toast.LENGTH_SHORT).show();
                     }
                 });
                 convertView.setTag(viewHolder);
