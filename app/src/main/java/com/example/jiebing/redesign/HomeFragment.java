@@ -1,15 +1,19 @@
 package com.example.jiebing.redesign;
 
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,15 +34,34 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private TextView theDate;
+    private Button button;
 
     ListView list;
-    String [] notifArray = {"Notif1", "Notif2", "Notif3"};
+    String [] notifArray = {"Panadol @ 11am", "Fedac @ 2pm", "Ibuprofen @ 5pm"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         // Inflate the layout for this fragment
+
+        theDate = (TextView) view.findViewById(R.id.date);
+        button = (Button) view.findViewById(R.id.goToCalendar);
+
+        Intent incomingIntent = getActivity().getIntent();
+        String date = incomingIntent.getStringExtra("date");
+        theDate.setText(date);
+
+        button.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         list = (ListView) view.findViewById(R.id.notifs);
         MyListAdapter adapter = new MyListAdapter(getContext(), notifArray);
@@ -46,6 +69,8 @@ public class HomeFragment extends Fragment {
         list.setAdapter(adapter);
         return view;
     }
+
+
 
     private class MyListAdapter extends ArrayAdapter<String> {
         Context context;
@@ -60,7 +85,7 @@ public class HomeFragment extends Fragment {
 
 
         }
-        
+
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             ViewHolder mainViewHolder = null;
@@ -116,3 +141,4 @@ public class HomeFragment extends Fragment {
         static Button button3;
     }
 }
+

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 default:
+                    setFragment(homeFragment);
                     return false;
             }
 
@@ -56,8 +57,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState == null){
+            setFragment(new HomeFragment());
+        }
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.main_nav);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
     }
 
 }
