@@ -60,25 +60,79 @@ public class MoreFragment extends Fragment {
                     Intent in = new Intent(getActivity(), SettingsActivity.class);
                     startActivity(in);
                 }
+
+                if (position == 3){
+                    customDialog("Warning", "All details in app will be reset. Click OK to proceed.", "methodCancel1", "methodOK1");
+                }
+
+                if (position == 4){
+                    //send email
+                    Intent in = new Intent(getActivity(), SendEmail.class);
+                    startActivity(in);
+                }
             }
         });
 
+
+
         return view;
+
+    }
+
+
+    private static final String TAG = "HomeFragment";
+
+    private void cancelMethod1(){
+        Log.d(TAG, "cancelmethod1: Called");
+        toastMessage("Cancel Method.");
+
+    }
+
+    private void okMethod1(){
+        Log.d(TAG, "okmethod1: Called");
+        toastMessage("OK Method.");
 
     }
 
     public void customDialog(String title, String message, final String cancelMethod, final String okMethod){
         final android.support.v7.app.AlertDialog.Builder builderSingle = new AlertDialog.Builder(getActivity());
 
+        builderSingle.setIcon(R.drawable.ic_warning);
+        builderSingle.setTitle(title);
+        builderSingle.setMessage(message);
+
+
         builderSingle.setNegativeButton(
                 "Cancel",
                 new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int which){
+                        Log.d(TAG, "onClick: Cancel Called.");
+                        if(cancelMethod.equals("cancelMethod1")){
+                            cancelMethod1();
+                        }
 
                     }
                 }
         );
+
+        builderSingle.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d(TAG, "onClick: OK Called.");
+                        if (okMethod.equals("okMethod1")){
+                            okMethod1();
+                        }
+                    }
+                }
+        );
+
+        builderSingle.show();
     }
 
+    public void toastMessage(String message){
+
+        Toast.makeText(getActivity(),message, Toast.LENGTH_SHORT).show();
+    }
 }

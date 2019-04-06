@@ -55,6 +55,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jiebing.redesign.MainActivity" />
         </activity>
+        <activity
+            android:name=".SendEmail"
+            android:label="@string/title_activity_send_email"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jiebing.redesign.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
