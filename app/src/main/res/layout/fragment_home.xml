@@ -1,76 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="12dp"
+    android:layout_margin="12dp">
 
     <TextView
-        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="15dp"
-        android:text="Status of Dispenser"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:layout_gravity="center"
+        android:text="18 April 2019"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        android:textSize="40sp"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="74dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_ready" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Status: Ready \nNext dispense: Fedac @ 1pm"/>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="69dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_battery" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Battery Level: 83% \nTime left till next charge: 3 days 15 hours"/>
-
-    </LinearLayout>
+</android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/comingUp"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coming up"
+        android:text="Today's Events"
         android:layout_marginLeft="13dp"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="25dp"
         android:textStyle="bold" />
 
-    <ListView
-        android:id="@+id/notifs"
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_pill"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="10am: Panadol x2"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+
+
+                <View
+                    android:id="@+id/grey_bar"
+                    android:layout_gravity="right"
+                    android:layout_width="20dp"
+                    android:layout_height="60dp"
+                    android:background="#AFAFAF"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_pill"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="12pm: Panadol x1"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+
+                <View
+                    android:id="@+id/red_bar"
+                    android:layout_gravity="right"
+                    android:layout_width="20dp"
+                    android:layout_height="60dp"
+                    android:background="#E74F4E"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:cardElevation="6dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_pill"
+                tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_vertical"
+            android:text="5pm: Panadol x2"
+            android:layout_weight="1"
+            android:textSize="15sp"/>
+
+
+            <View
+                android:id="@+id/green_bar"
+                android:layout_gravity="right"
+                android:layout_width="20dp"
+                android:layout_height="60dp"
+                android:background="#3CB371"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_surgeon"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="5pm: Appointment @ Thomson Medical"
+                    android:textSize="15sp"/>
+
+
+                <View
+                    android:id="@+id/blue_bar"
+                    android:layout_gravity="right"
+                    android:layout_width="20dp"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_pill"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="7pm: Zyrtec x2"
+                    android:layout_weight="1"
+                    android:textSize="15sp"/>
+
+
+                <View
+                    android:layout_gravity="right"
+                    android:layout_width="20dp"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
 
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/goToCalendar"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -82,9 +271,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="Events on selected date:" />
+            android:hint="Events on selected date will display here\n\n\n" />
 
 
+        <TextView
+            android:id="@+id/pillCnt"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Pill Count"
+            android:layout_marginLeft="13dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/barchart"
+            android:layout_margin="2dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
 </LinearLayout>
+
+
+
+</ScrollView>

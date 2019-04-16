@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class ProfileDetails extends AppCompatActivity {
 
@@ -19,12 +21,25 @@ public class ProfileDetails extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.fab:
+
+                        Button txtnum = (Button) findViewById(R.id.fab);
+
+                        Bundle bundle = new Bundle();
+                        EditText editText = (EditText)findViewById(R.id.gender);
+                        editText.setFocusableInTouchMode(true);
+                        ((EditText)findViewById(R.id.nameText)).setFocusableInTouchMode(true);
+                        ((EditText)findViewById(R.id.DOB)).setFocusableInTouchMode(true);
+                        ((EditText)findViewById(R.id.address)).setFocusableInTouchMode(true);
+
+                        break;}
+        }
+
+    });
 
 }
+
+}
+

@@ -34,11 +34,11 @@ public class HistoryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        groups = new String[]{"January", "February", "March", "April"};
+        groups = new String[]{"January 2019", "February 2019", "March 2019", "April 2019"};
 
         children = new String[][]{
-                {"2 pills missed, 21 pills taken"},
-                {"4 pills missed, 25 pills taken"},
+                {"4 pills missed, 21 pills taken \nMISSED: Panadol @ 2pm on 14 Jan\nFedac @ 9pm on 20 Jan\nFedac @ 9pm on 22 Jan \nPandaol @ 10am on 25 Jan"},
+                {"2 pills missed, 25 pills taken"},
                 {"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."},
                 {"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."}
         };

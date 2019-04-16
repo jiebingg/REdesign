@@ -1,13 +1,19 @@
 package com.example.jiebing.redesign;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,10 +29,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         ArrayList<String> settingsList = new ArrayList<>();
 
-        settingsList.add("About dispenser");
-        settingsList.add("Alerts and notifications");
-        settingsList.add("Language options");
-        settingsList.add("Suspend dispenser");
+        settingsList.add("About MiPi");
+        settingsList.add("Alerts and Notifications");
+        settingsList.add("Language Options");
+        settingsList.add("Suspend Dispenser");
 
 
 
@@ -37,15 +43,88 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent in = new Intent(getApplicationContext(), AboutMiPi.class);
+                    startActivity(in);
+                }
+
+                if (position == 1) {
+
+                }
+                if (position == 2){
+
+                }
+
+                if (position == 3){
+                    customDialog("Warning", "The MiPi dispenser will stop dispensing any medication. Click OK to proceed.", "methodCancel1", "methodOK1");
+                }
+
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
+    private static final String TAG = "SettingsActivity";
+
+    private void cancelMethod1(){
+        Log.d(TAG, "cancelmethod1: Called");
+        toastMessage("Cancel Method.");
+
+    }
+
+    private void okMethod1(){
+        Log.d(TAG, "okmethod1: Called");
+        toastMessage("OK Method.");
+
+    }
+
+    public void customDialog(String title, String message, final String cancelMethod, final String okMethod){
+        final android.support.v7.app.AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+
+        builderSingle.setIcon(R.drawable.ic_warning);
+        builderSingle.setTitle(title);
+        builderSingle.setMessage(message);
+
+
+        builderSingle.setNegativeButton(
+                "Cancel",
+                new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which){
+                        Log.d(TAG, "onClick: Cancel Called.");
+                        if(cancelMethod.equals("cancelMethod1")){
+                            cancelMethod1();
+                        }
+
+                    }
+                }
+        );
+
+        builderSingle.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d(TAG, "onClick: OK Called.");
+                        if (okMethod.equals("okMethod1")){
+                            okMethod1();
+                        }
+                    }
+                }
+        );
+
+        builderSingle.show();
+    }
+
+    public void toastMessage(String message){
+
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
 }
+
+

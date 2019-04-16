@@ -57,12 +57,30 @@
         </activity>
         <activity
             android:name=".SendEmail"
-            android:label="@string/title_activity_send_email"
+            android:label="Contact Support"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jiebing.redesign.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddAppt"
+            android:label="New Appointment"
+            android:parentActivityName=".upcomingAppt"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jiebing.redesign.upcomingAppt" />
+        </activity>
+        <activity
+            android:name=".AboutMiPi"
+            android:label="About MiPi"
+            android:parentActivityName=".SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jiebing.redesign.SettingsActivity" />
         </activity>
     </application>
 

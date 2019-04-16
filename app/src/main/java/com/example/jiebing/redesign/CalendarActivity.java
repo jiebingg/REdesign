@@ -23,7 +23,7 @@ public class CalendarActivity extends AppCompatActivity {
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                String date = "Events on " + dayOfMonth + "/" + (month+1) + "/" + year + ":";
+                String date = "Events on " + dayOfMonth + "/" + (month+1) + "/" + year + ":\n\n10am: Appointment at National University Hospital \n12pm: Panadol x2 \n5pm: Ibuprofen x1";
                 Log.d(TAG, "onSelectedDayChange: date = " + date);
 
                 Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
